@@ -1,0 +1,223 @@
+2023-03-13 11:28:03,874:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='gru', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 11:28:03,875:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 11:49:09,217:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='gru', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 11:49:09,217:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 11:49:10,134:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 11:49:10,941:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 11:49:10,959:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 11:49:11,787:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+2023-03-13 11:49:11,794:DEBUG: Attempting to acquire lock 1880486608320 on C:\Users\khyun/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 11:49:11,796:DEBUG: Lock 1880486608320 acquired on C:\Users\khyun/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 11:49:11,805:DEBUG: Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+2023-03-13 11:49:11,864:DEBUG: https://cdn-lfs.huggingface.co:443 "GET /bert-base-uncased/097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27pytorch_model.bin%3B+filename%3D%22pytorch_model.bin%22%3B&response-content-type=application%2Foctet-stream&Expires=1678934180&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4tbGZzLmh1Z2dpbmdmYWNlLmNvL2JlcnQtYmFzZS11bmNhc2VkLzA5NzQxNzM4MWQ2YzcyMzBiZDllMzU1NzQ1NmQ3MjZkZTZlODMyNDVlYzhiMjRmNTI5ZjYwMTk4YTY3YjIwM2E~cmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj0qJnJlc3BvbnNlLWNvbnRlbnQtdHlwZT0qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjc4OTM0MTgwfX19XX0_&Signature=TKYxTcxR453IEdZaVYjg5W8LFELPY3mbGLyaEVR8MqmtobN3DEkcQy5-nm0Mg0Acy9Q01zU47YH1tk~961kFHFdXbpehMtjxHOk0gksPqqjMkuN4XWRovuoMXdvlTG3MOp9tJR5PgXfPNsIknrtolbvmJ68jCiwWG~sred43NDmbU4nkWwnuAmZOX3~IZUb7TNrwfmvyYhVehyoQRyemlEJ2Fo6cE9~CCOPjFMLqkldPFMcT9IT9XLrxR~JnVnTppS6xNEhv1zA2K1TfogBkPGmO-9LLDYcIJieArw9A~yOF6xHBs9qoNRHPxg7V6PAZaqtq~A9UwogefuJMSwuCMg__&Key-Pair-Id=KVTP0A1DKRTAX HTTP/1.1" 200 440473133
+2023-03-13 11:49:26,242:DEBUG: Attempting to release lock 1880486608320 on C:\Users\khyun/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 11:49:26,243:DEBUG: Lock 1880486608320 released on C:\Users\khyun/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 11:55:05,162:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='gru', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 11:55:05,165:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 11:55:05,941:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 11:55:06,795:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 11:56:17,975:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='gru', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 11:56:17,976:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 11:56:18,747:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 11:56:19,577:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 11:58:03,870:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='gru', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 11:58:03,873:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 11:58:04,647:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 11:58:05,461:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 13:40:55,410:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='lstm', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True, False], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 13:40:55,411:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 13:40:56,200:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 13:40:57,022:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 13:42:10,807:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='lstm', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 13:42:10,807:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 13:42:11,619:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 13:42:12,458:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 13:42:18,365:DEBUG: Start training...
+2023-03-13 14:09:38,800:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='lstm', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 14:09:38,903:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 14:11:08,612:DEBUG: Namespace(ckpt_path='./ckpt', log_path='./log', task_name='test', dataset='mosi_SDK', normalize=[False, False, False], text='text', audio='covarep', video='facet41', d_t=768, d_a=74, d_v=47, batch_size=16, num_workers=4, persistent_workers=False, pin_memory=False, drop_last=False, task='regression', num_class=1, d_common=128, encoders='lstm', features_compose_t='cat', features_compose_k='cat', activate='gelu', time_len=100, d_hiddens=[[10, 2, 64], [5, 2, 32]], d_outs=[[10, 2, 64], [5, 2, 32]], dropout_mlp=[0.5, 0.5, 0.5], dropout=[0.5, 0.5, 0.5, 0.5], bias=False, ln_first=False, res_project=[True, True], seed=0, loss='MAE', gradient_clip=1.0, epochs_num=70, optm='Adam', bert_lr_rate=-1, weight_decay=0.0, learning_rate=0.0001, lr_decrease='step', lr_decrease_iter='60', lr_decrease_rate=0.1, cuda='0', parallel=False, print_param=False, bert_freeze='no')
+2023-03-13 14:11:08,612:DEBUG: Making dataset, model, loss and optimizer...
+2023-03-13 14:11:17,145:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 14:11:17,939:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/config.json HTTP/1.1" 200 0
+2023-03-13 14:11:17,948:DEBUG: Starting new HTTPS connection (1): huggingface.co:443
+2023-03-13 14:11:18,754:DEBUG: https://huggingface.co:443 "HEAD /bert-base-uncased/resolve/main/pytorch_model.bin HTTP/1.1" 302 0
+2023-03-13 14:11:18,758:DEBUG: Attempting to acquire lock 2268729149088 on C:\Users\kacel/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 14:11:18,759:DEBUG: Lock 2268729149088 acquired on C:\Users\kacel/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 14:11:18,762:DEBUG: Starting new HTTPS connection (1): cdn-lfs.huggingface.co:443
+2023-03-13 14:11:28,872:DEBUG: https://cdn-lfs.huggingface.co:443 "GET /bert-base-uncased/097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a?response-content-disposition=attachment%3B+filename*%3DUTF-8%27%27pytorch_model.bin%3B+filename%3D%22pytorch_model.bin%22%3B&response-content-type=application%2Foctet-stream&Expires=1678942653&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4tbGZzLmh1Z2dpbmdmYWNlLmNvL2JlcnQtYmFzZS11bmNhc2VkLzA5NzQxNzM4MWQ2YzcyMzBiZDllMzU1NzQ1NmQ3MjZkZTZlODMyNDVlYzhiMjRmNTI5ZjYwMTk4YTY3YjIwM2E~cmVzcG9uc2UtY29udGVudC1kaXNwb3NpdGlvbj0qJnJlc3BvbnNlLWNvbnRlbnQtdHlwZT0qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNjc4OTQyNjUzfX19XX0_&Signature=gWGAYGejG0W~0bl2Wkw4xuhO1meF1tzL2BumXLijnIPM16C5bnd5Lb3OW1CuDX7C4SqYO9-OeWVwBjNS7eoPC6by5WYJfK6sTGRLSthsFO2yQCARiqecTOUfA5SIvg1dAzi1wxDE6CAHldKxUsg98JWhw7PRkFjxzCnIBhqwXVvmBOAqfjMnUfC0KXuUDXHog1xkZhHjIjooMFMU4Jt7Ukla30oqwG7KY4kW-Q9rL~K5Shdd984-L0-qPiNidF7Lki37~VBXF-XqPw0ZxTFAKWvTas4NFqbeFZImryn3Zi6o8KUqpZRqjCrj~dmIyAqJtTNZdiHm2rDGnTTQ5iegDQ__&Key-Pair-Id=KVTP0A1DKRTAX HTTP/1.1" 200 440473133
+2023-03-13 14:11:43,975:DEBUG: Attempting to release lock 2268729149088 on C:\Users\kacel/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 14:11:43,975:DEBUG: Lock 2268729149088 released on C:\Users\kacel/.cache\huggingface\hub\models--bert-base-uncased\blobs\097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a.lock
+2023-03-13 14:12:04,305:DEBUG: Start training...
+2023-03-13 14:13:08,229:DEBUG: Better Valid score found...
+2023-03-13 14:13:08,230:DEBUG: MAE: 1.4185070371011568
+2023-03-13 14:13:08,230:DEBUG: Corr: 0.03002349569257836
+2023-03-13 14:13:08,230:DEBUG: Acc5: 0.2336448598130841
+2023-03-13 14:13:08,231:DEBUG: Acc7: 0.2336448598130841
+2023-03-13 14:13:08,232:DEBUG: Acc2 (pos/neg): 0.527363184079602
+2023-03-13 14:13:08,232:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:13:08,237:DEBUG:               precision    recall  f1-score   support
+
+       False    0.41237   0.51282   0.45714        78
+        True    0.63462   0.53659   0.58150       123
+
+    accuracy                        0.52736       201
+   macro avg    0.52349   0.52470   0.51932       201
+weighted avg    0.54837   0.52736   0.53324       201
+
+2023-03-13 14:13:08,237:DEBUG: Acc2 (non-neg/neg): 0.5373831775700935
+2023-03-13 14:13:08,237:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:13:08,241:DEBUG:               precision    recall  f1-score   support
+
+       False    0.39604   0.51282   0.44693        78
+        True    0.66372   0.55147   0.60241       136
+
+    accuracy                        0.53738       214
+   macro avg    0.52988   0.53215   0.52467       214
+weighted avg    0.56615   0.53738   0.54574       214
+
+2023-03-13 14:13:08,242:DEBUG: Test in Better Valid score found...
+2023-03-13 14:13:08,242:DEBUG: MAE: 1.4090364337803758
+2023-03-13 14:13:08,243:DEBUG: Corr: 0.11443927577249409
+2023-03-13 14:13:08,243:DEBUG: Acc5: 0.15597667638483964
+2023-03-13 14:13:08,243:DEBUG: Acc7: 0.15597667638483964
+2023-03-13 14:13:08,244:DEBUG: Acc2 (pos/neg): 0.524390243902439
+2023-03-13 14:13:08,244:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:13:08,250:DEBUG:               precision    recall  f1-score   support
+
+       False    0.61754   0.46438   0.53012       379
+        True    0.45283   0.60650   0.51852       277
+
+    accuracy                        0.52439       656
+   macro avg    0.53519   0.53544   0.52432       656
+weighted avg    0.54799   0.52439   0.52522       656
+
+2023-03-13 14:13:08,251:DEBUG: Acc2 (non-neg/neg): 0.5306122448979592
+2023-03-13 14:13:08,251:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:13:08,256:DEBUG:               precision    recall  f1-score   support
+
+       False    0.59661   0.46438   0.52226       379
+        True    0.48082   0.61238   0.53868       307
+
+    accuracy                        0.53061       686
+   macro avg    0.53871   0.53838   0.53047       686
+weighted avg    0.54479   0.53061   0.52961       686
+
+2023-03-13 14:13:08,256:DEBUG: Epoch:[  1] || TrainLoss:[1.359] Train_mae:[ 1.357] Train_corr:[ 0.002] Train_7-cls_acc:[ 0.190] Train_2-cls_acc:[ 0.485] Train_7-f1:[ 0.086] Train_2-f1:[ 0.480] || ValLoss:[1.407] Val_mae:[ 1.419] Val_corr:[ 0.030] Val_7-cls_acc:[ 0.234] Val_2-cls_acc:[ 0.537] Val_7-f1:[ 0.095] Val_2-f1:[ 0.546]
+2023-03-13 14:14:12,179:DEBUG: Better Valid score found...
+2023-03-13 14:14:12,179:DEBUG: MAE: 1.3957878272353768
+2023-03-13 14:14:12,179:DEBUG: Corr: 0.012532389306498
+2023-03-13 14:14:12,181:DEBUG: Acc5: 0.2336448598130841
+2023-03-13 14:14:12,181:DEBUG: Acc7: 0.2336448598130841
+2023-03-13 14:14:12,181:DEBUG: Acc2 (pos/neg): 0.6169154228855721
+2023-03-13 14:14:12,182:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:14:12,186:DEBUG:               precision    recall  f1-score   support
+
+       False    0.52174   0.15385   0.23762        78
+        True    0.62921   0.91057   0.74419       123
+
+    accuracy                        0.61692       201
+   macro avg    0.57548   0.53221   0.49090       201
+weighted avg    0.58751   0.61692   0.54761       201
+
+2023-03-13 14:14:12,187:DEBUG: Acc2 (non-neg/neg): 0.6308411214953271
+2023-03-13 14:14:12,187:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:14:12,192:DEBUG:               precision    recall  f1-score   support
+
+       False    0.48000   0.15385   0.23301        78
+        True    0.65079   0.90441   0.75692       136
+
+    accuracy                        0.63084       214
+   macro avg    0.56540   0.52913   0.49497       214
+weighted avg    0.58854   0.63084   0.56596       214
+
+2023-03-13 14:14:12,192:DEBUG: Test in Better Valid score found...
+2023-03-13 14:14:12,193:DEBUG: MAE: 1.453896400839112
+2023-03-13 14:14:12,193:DEBUG: Corr: 0.07177360868583026
+2023-03-13 14:14:12,193:DEBUG: Acc5: 0.15743440233236153
+2023-03-13 14:14:12,194:DEBUG: Acc7: 0.15743440233236153
+2023-03-13 14:14:12,195:DEBUG: Acc2 (pos/neg): 0.4527439024390244
+2023-03-13 14:14:12,195:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:14:12,199:DEBUG:               precision    recall  f1-score   support
+
+       False    0.63889   0.12137   0.20399       379
+        True    0.42979   0.90614   0.58304       277
+
+    accuracy                        0.45274       656
+   macro avg    0.53434   0.51375   0.39352       656
+weighted avg    0.55060   0.45274   0.36405       656
+
+2023-03-13 14:14:12,200:DEBUG: Acc2 (non-neg/neg): 0.4737609329446064
+2023-03-13 14:14:12,203:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:14:12,208:DEBUG:               precision    recall  f1-score   support
+
+       False    0.62162   0.12137   0.20309       379
+        True    0.45588   0.90879   0.60718       307
+
+    accuracy                        0.47376       686
+   macro avg    0.53875   0.51508   0.40514       686
+weighted avg    0.54745   0.47376   0.38393       686
+
+2023-03-13 14:14:12,209:DEBUG: Epoch:[  2] || TrainLoss:[1.354] Train_mae:[ 1.357] Train_corr:[-0.028] Train_7-cls_acc:[ 0.186] Train_2-cls_acc:[ 0.506] Train_7-f1:[ 0.086] Train_2-f1:[ 0.508] || ValLoss:[1.393] Val_mae:[ 1.396] Val_corr:[ 0.013] Val_7-cls_acc:[ 0.234] Val_2-cls_acc:[ 0.631] Val_7-f1:[ 0.102] Val_2-f1:[ 0.566]
+2023-03-13 14:15:13,104:DEBUG: Better Valid score found...
+2023-03-13 14:15:13,105:DEBUG: MAE: 1.3696546577892015
+2023-03-13 14:15:13,105:DEBUG: Corr: 0.06690723499133239
+2023-03-13 14:15:13,106:DEBUG: Acc5: 0.22429906542056074
+2023-03-13 14:15:13,106:DEBUG: Acc7: 0.22429906542056074
+2023-03-13 14:15:13,107:DEBUG: Acc2 (pos/neg): 0.6019900497512438
+2023-03-13 14:15:13,107:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:15:13,111:DEBUG:               precision    recall  f1-score   support
+
+       False    0.00000   0.00000   0.00000        78
+        True    0.60804   0.98374   0.75155       123
+
+    accuracy                        0.60199       201
+   macro avg    0.30402   0.49187   0.37578       201
+weighted avg    0.37208   0.60199   0.45991       201
+
+2023-03-13 14:15:13,112:DEBUG: Acc2 (non-neg/neg): 0.6261682242990654
+2023-03-13 14:15:13,112:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:15:13,116:DEBUG:               precision    recall  f1-score   support
+
+       False    0.00000   0.00000   0.00000        78
+        True    0.63208   0.98529   0.77011       136
+
+    accuracy                        0.62617       214
+   macro avg    0.31604   0.49265   0.38506       214
+weighted avg    0.40169   0.62617   0.48942       214
+
+2023-03-13 14:15:13,116:DEBUG: Test in Better Valid score found...
+2023-03-13 14:15:13,117:DEBUG: MAE: 1.4810470197371508
+2023-03-13 14:15:13,117:DEBUG: Corr: 0.08965930655023621
+2023-03-13 14:15:13,117:DEBUG: Acc5: 0.16034985422740525
+2023-03-13 14:15:13,118:DEBUG: Acc7: 0.16034985422740525
+2023-03-13 14:15:13,119:DEBUG: Acc2 (pos/neg): 0.43140243902439024
+2023-03-13 14:15:13,119:DEBUG: Classification Report (pos/neg): 
+2023-03-13 14:15:13,123:DEBUG:               precision    recall  f1-score   support
+
+       False    0.65000   0.03430   0.06516       379
+        True    0.42453   0.97473   0.59146       277
+
+    accuracy                        0.43140       656
+   macro avg    0.53726   0.50452   0.32831       656
+weighted avg    0.55479   0.43140   0.28739       656
+
+2023-03-13 14:15:13,124:DEBUG: Acc2 (non-neg/neg): 0.45626822157434405
+2023-03-13 14:15:13,124:DEBUG: Classification Report (non-neg/neg): 
+2023-03-13 14:15:13,129:DEBUG:               precision    recall  f1-score   support
+
+       False    0.65000   0.03430   0.06516       379
+        True    0.45045   0.97720   0.61665       307
+
+    accuracy                        0.45627       686
+   macro avg    0.55023   0.50575   0.34091       686
+weighted avg    0.56070   0.45627   0.31197       686
+
+2023-03-13 14:15:13,129:DEBUG: Epoch:[  3] || TrainLoss:[1.349] Train_mae:[ 1.341] Train_corr:[ 0.017] Train_7-cls_acc:[ 0.187] Train_2-cls_acc:[ 0.521] Train_7-f1:[ 0.085] Train_2-f1:[ 0.518] || ValLoss:[1.372] Val_mae:[ 1.370] Val_corr:[ 0.067] Val_7-cls_acc:[ 0.224] Val_2-cls_acc:[ 0.626] Val_7-f1:[ 0.111] Val_2-f1:[ 0.489]
+2023-03-13 14:16:21,978:DEBUG: Epoch:[  4] || TrainLoss:[1.339] Train_mae:[ 1.344] Train_corr:[ 0.005] Train_7-cls_acc:[ 0.185] Train_2-cls_acc:[ 0.521] Train_7-f1:[ 0.089] Train_2-f1:[ 0.514] || ValLoss:[1.382] Val_mae:[ 1.381] Val_corr:[-0.014] Val_7-cls_acc:[ 0.201] Val_2-cls_acc:[ 0.640] Val_7-f1:[ 0.106] Val_2-f1:[ 0.512]
+2023-03-13 14:17:35,613:DEBUG: Epoch:[  5] || TrainLoss:[1.335] Train_mae:[ 1.328] Train_corr:[ 0.042] Train_7-cls_acc:[ 0.191] Train_2-cls_acc:[ 0.538] Train_7-f1:[ 0.098] Train_2-f1:[ 0.520] || ValLoss:[1.410] Val_mae:[ 1.418] Val_corr:[-0.041] Val_7-cls_acc:[ 0.215] Val_2-cls_acc:[ 0.556] Val_7-f1:[ 0.083] Val_2-f1:[ 0.502]
+2023-03-13 14:18:42,379:DEBUG: Epoch:[  6] || TrainLoss:[1.345] Train_mae:[ 1.346] Train_corr:[-0.033] Train_7-cls_acc:[ 0.190] Train_2-cls_acc:[ 0.546] Train_7-f1:[ 0.095] Train_2-f1:[ 0.519] || ValLoss:[1.395] Val_mae:[ 1.399] Val_corr:[-0.035] Val_7-cls_acc:[ 0.201] Val_2-cls_acc:[ 0.621] Val_7-f1:[ 0.089] Val_2-f1:[ 0.503]
+2023-03-13 14:19:46,776:DEBUG: Epoch:[  7] || TrainLoss:[1.342] Train_mae:[ 1.349] Train_corr:[-0.042] Train_7-cls_acc:[ 0.189] Train_2-cls_acc:[ 0.531] Train_7-f1:[ 0.093] Train_2-f1:[ 0.499] || ValLoss:[1.410] Val_mae:[ 1.406] Val_corr:[-0.093] Val_7-cls_acc:[ 0.192] Val_2-cls_acc:[ 0.640] Val_7-f1:[ 0.091] Val_2-f1:[ 0.534]
+2023-03-13 14:20:54,961:DEBUG: Epoch:[  8] || TrainLoss:[1.350] Train_mae:[ 1.345] Train_corr:[-0.035] Train_7-cls_acc:[ 0.188] Train_2-cls_acc:[ 0.531] Train_7-f1:[ 0.096] Train_2-f1:[ 0.488] || ValLoss:[1.392] Val_mae:[ 1.392] Val_corr:[-0.048] Val_7-cls_acc:[ 0.206] Val_2-cls_acc:[ 0.636] Val_7-f1:[ 0.091] Val_2-f1:[ 0.502]
+2023-03-13 14:22:02,182:DEBUG: Epoch:[  9] || TrainLoss:[1.335] Train_mae:[ 1.333] Train_corr:[ 0.008] Train_7-cls_acc:[ 0.189] Train_2-cls_acc:[ 0.549] Train_7-f1:[ 0.094] Train_2-f1:[ 0.491] || ValLoss:[1.389] Val_mae:[ 1.386] Val_corr:[ 0.022] Val_7-cls_acc:[ 0.210] Val_2-cls_acc:[ 0.631] Val_7-f1:[ 0.102] Val_2-f1:[ 0.492]
+2023-03-13 14:23:09,297:DEBUG: Epoch:[ 10] || TrainLoss:[1.325] Train_mae:[ 1.324] Train_corr:[ 0.023] Train_7-cls_acc:[ 0.189] Train_2-cls_acc:[ 0.560] Train_7-f1:[ 0.096] Train_2-f1:[ 0.512] || ValLoss:[1.401] Val_mae:[ 1.399] Val_corr:[-0.063] Val_7-cls_acc:[ 0.196] Val_2-cls_acc:[ 0.631] Val_7-f1:[ 0.079] Val_2-f1:[ 0.492]
+2023-03-13 14:24:24,453:DEBUG: Epoch:[ 11] || TrainLoss:[1.320] Train_mae:[ 1.326] Train_corr:[ 0.019] Train_7-cls_acc:[ 0.191] Train_2-cls_acc:[ 0.549] Train_7-f1:[ 0.094] Train_2-f1:[ 0.500] || ValLoss:[1.386] Val_mae:[ 1.388] Val_corr:[-0.045] Val_7-cls_acc:[ 0.220] Val_2-cls_acc:[ 0.631] Val_7-f1:[ 0.101] Val_2-f1:[ 0.492]
