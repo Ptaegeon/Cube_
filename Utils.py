@@ -318,6 +318,25 @@ class SIMSE(torch.nn.Module):
         simse = torch.sum(diffs).pow(2) / (n ** 2)
 
         return simse
+    
+class CCC(torch.nn.Module):
+    def __init__(self):
+        super(CCC, self).__init__()
+    
+    def forward(self, pred, real, weights=None):
+        real_mean = torch.mean(real, 1, keepdim=True, out=None)
+        pred_mean = torch.mean(pred, 1, keepdim=True, out=None)
+        covariance = (real - real_mean) * (pred - pred_mean)
+        real_var = torch.var(real, 1, keepdim=True, unbiased=True, out=None)
+        pred_var = torch.var(pred, 1, keepdim=True, unbiased=True, out=None)
+        ccc = 2. * covariance / (
+                (real_var + pred_var + torch.mul(real_mean - pred_mean, real_mean - pred_mean)) + 1e-50)
+        ccc_loss = 1. - ccc
+
+        if weights is not None:
+            ccc_loss *= weights
+
+        return torch.mean(ccc_loss)
 
 
 class SAM(torch.optim.Optimizer):

@@ -10,15 +10,15 @@ def parse_args():
     parser.add_argument("--task_name", default="test")
 
     # Data parameters
-    parser.add_argument("--dataset", default='mosi_SDK', type=str)
+    parser.add_argument("--dataset", default = 'E-DAIC-WOZ', type=str, help = '(default file path: mosi_SDK)')
     parser.add_argument("--normalize", default='0-0-0', type=str2bools)
-    parser.add_argument("--text", default='text', type=str) # Only for CMUSDK dataset
-    parser.add_argument("--audio", default='covarep', type=str) # Only for CMUSDK dataset
-    parser.add_argument("--video", default='facet41', type=str) # Only for CMUSDK dataset
-    parser.add_argument("--d_t", default=768, type=int)
-    parser.add_argument("--d_a", default=74, type=int)
-    parser.add_argument("--d_v", default=47, type=int)
-    parser.add_argument("--batch_size", default=16, type=int)
+    parser.add_argument("--text", default= 'text', type=str) # Only for CMUSDK dataset
+    parser.add_argument("--audio", default= 'MFCC', type=str, help = '(default : covarep)') # Only for CMUSDK dataset
+    parser.add_argument("--video", default= 'AUPose', type=str, help = '(default : facet41)') # Only for CMUSDK dataset
+    parser.add_argument("--d_t", default=768, type=int )
+    parser.add_argument("--d_a", default=39, type=int, help = '(default : 74 )')
+    parser.add_argument("--d_v", default=49, type=int, help = '(default : 47 )')
+    parser.add_argument("--batch_size", default=8, type=int, help='(default : 16)')
     parser.add_argument("--num_workers", default=4, type=int)
     parser.add_argument("--persistent_workers", action='store_true')
     parser.add_argument("--pin_memory", action='store_true')
@@ -43,7 +43,7 @@ def parse_args():
     
     # Training and optimization
     parser.add_argument("--seed", default=0, type=int)
-    parser.add_argument("--loss", default='MAE', choices=['Focal', 'CE', 'BCE', 'RMSE', 'MSE', 'SIMSE', 'MAE'])
+    parser.add_argument("--loss", default='CCC', choices=['Focal', 'CE', 'BCE', 'RMSE', 'MSE', 'SIMSE', 'MAE', 'CCC'])
     parser.add_argument("--gradient_clip", default=1.0, type=float)
     parser.add_argument("--epochs_num", default=70, type=int)
     parser.add_argument("--optm", default="Adam", type=str, choices=['SGD', 'SAM', 'Adam'])

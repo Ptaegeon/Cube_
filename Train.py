@@ -13,7 +13,7 @@ from DataLoaderLocal import mosi_r2c_7, pom_r2c_7, r2c_2, r2c_7
 from DataLoaderUniversal import get_data_loader
 from Model import Model
 from Parameters import parse_args
-from Utils import SAM, SIMSE, get_mask_from_sequence, rmse, set_logger, topk_, calc_metrics, calc_metrics_pom, to_gpu
+from Utils import SAM, SIMSE, get_mask_from_sequence, rmse, CCC, set_logger, topk_, calc_metrics, calc_metrics_pom, to_gpu
 # from Utils import SAM, FocalLoss, SIMSE, get_mask_from_sequence, rmse, set_logger, topk_, calc_metrics, calc_metrics_pom, to_gpu
 
 from transformers import BertTokenizer
@@ -113,6 +113,8 @@ def get_loss(opt):
         loss_func = torch.nn.MSELoss(reduction='mean')
     elif opt.loss == 'SIMSE':
         loss_func = SIMSE()
+    elif opt.loss == 'CCC':
+        loss_func = CCC()
     else :
         raise NotImplementedError
         
@@ -124,6 +126,11 @@ def train(train_loader, model, optimizer, loss_func, opt):
     running_loss, predictions_corr, targets_corr = 0.0, [], []
 
     for _, datas in enumerate(train_loader):
+        
+        import pdb
+        pdb.set_trace()
+        
+
         t_data, a_data, v_data = datas[0], datas[1].cuda().float(), datas[2].cuda().float()
         labels = get_labels_from_datas(datas, opt) # Get multiple labels
         targets = get_loss_label_from_labels(labels, opt).cuda() # Get target from labels

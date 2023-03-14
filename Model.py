@@ -6,6 +6,7 @@ from Utils import mean_temporal, get_mask_from_sequence, to_cpu
 from torch.nn.utils.rnn import pack_padded_sequence, pad_packed_sequence
 from transformers import BertModel, BertConfig, BertTokenizer
 
+
 def get_output_dim(features_compose_t, features_compose_k, d_out, t_out, k_out):
     if features_compose_t in ['mean', 'sum']:
         classify_dim = d_out
@@ -61,8 +62,6 @@ class Model(nn.Module):
         # Projector
         self.W_t = nn.Linear(d_t, d_common, bias=False)
 
-        import pdb
-        pdb.set_trace()
         # MLPsEncoder
         self.mlp_encoder = MLPEncoder(activate=opt.activate, d_in=[opt.time_len, 3, d_common], d_hiddens=opt.d_hiddens, d_outs=opt.d_outs, dropouts=opt.dropout_mlp, bias=opt.bias, ln_first=opt.ln_first, res_project=opt.res_project)
 
