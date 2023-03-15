@@ -117,6 +117,7 @@ class Model(nn.Module):
             v = pack_padded_sequence(v, lengths, batch_first=True, enforce_sorted=False)
             self.rnn_a.flatten_parameters()
             self.rnn_v.flatten_parameters()
+            
             (packed_a, a_out), (packed_v, v_out) = self.rnn_a(a), self.rnn_v(v)
             a, _ = pad_packed_sequence(packed_a, batch_first=True, total_length=l_av_padded)
             v, _ = pad_packed_sequence(packed_v, batch_first=True, total_length=l_av_padded)

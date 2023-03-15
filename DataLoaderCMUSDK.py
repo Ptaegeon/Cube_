@@ -180,6 +180,7 @@ class CMUSDKDataset(Dataset):
             
         else:
             raise NotImplementedError
+        print(mode)
         
 
 

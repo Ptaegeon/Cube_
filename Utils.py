@@ -324,11 +324,13 @@ class CCC(torch.nn.Module):
         super(CCC, self).__init__()
     
     def forward(self, pred, real, weights=None):
-        real_mean = torch.mean(real, 1, keepdim=True, out=None)
-        pred_mean = torch.mean(pred, 1, keepdim=True, out=None)
+        
+        
+        real_mean = torch.mean(real, 0, keepdim=True, out=None)
+        pred_mean = torch.mean(pred, 0, keepdim=True, out=None)
         covariance = (real - real_mean) * (pred - pred_mean)
-        real_var = torch.var(real, 1, keepdim=True, unbiased=True, out=None)
-        pred_var = torch.var(pred, 1, keepdim=True, unbiased=True, out=None)
+        real_var = torch.var(real, 0, keepdim=True, unbiased=True, out=None)
+        pred_var = torch.var(pred, 0, keepdim=True, unbiased=True, out=None)
         ccc = 2. * covariance / (
                 (real_var + pred_var + torch.mul(real_mean - pred_mean, real_mean - pred_mean)) + 1e-50)
         ccc_loss = 1. - ccc

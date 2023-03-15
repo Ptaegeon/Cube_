@@ -34,8 +34,8 @@ def get_data_loader(opt):
         return data_loader_train, data_loader_valid, data_loader_test
     
     if 'E-DAIC-WOZ' in dataset:
-        dataset_train = CMUSDKDataset(mode='train', dataset='E-DAIC-WOZ', text=text, audio=audio, video=video, normalize=normalize, )
-        dataset_valid = CMUSDKDataset(mode='valid', dataset='E-DAIC-WOZ', text=text, audio=audio, video=video, normalize=normalize, )
+        dataset_train = CMUSDKDataset(mode='test', dataset='E-DAIC-WOZ', text=text, audio=audio, video=video, normalize=normalize, )
+        dataset_valid = CMUSDKDataset(mode='test', dataset='E-DAIC-WOZ', text=text, audio=audio, video=video, normalize=normalize, )
         dataset_test = CMUSDKDataset(mode='test', dataset='E-DAIC-WOZ', text=text, audio=audio, video=video, normalize=normalize, )
         data_loader_train = DataLoader(dataset_train, batch_size, collate_fn=multi_collate_e_daic_woz, shuffle=True, 
             persistent_workers=persistent_workers, num_workers=num_workers, pin_memory=pin_memory, drop_last=drop_last)

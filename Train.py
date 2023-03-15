@@ -127,8 +127,6 @@ def train(train_loader, model, optimizer, loss_func, opt):
 
     for _, datas in enumerate(train_loader):
         
-        import pdb
-        pdb.set_trace()
         
 
         t_data, a_data, v_data = datas[0], datas[1].cuda().float(), datas[2].cuda().float()
@@ -261,7 +259,7 @@ def get_labels_from_datas(datas, opt):
 
 
 def get_loss_label_from_labels(labels, opt):
-    if opt.dataset in ['mosi_SDK', 'mosei_SDK', 'mosi_20', 'mosi_50', 'mosei_20', 'mosei_50']:
+    if opt.dataset in ['mosi_SDK', 'mosei_SDK', 'mosi_20', 'mosi_50', 'mosei_20', 'mosei_50', 'E-DAIC-WOZ']:
         if opt.task == 'regression':
             labels = labels[0]
         elif opt.task == 'classification' and opt.num_class==2:
@@ -286,6 +284,7 @@ def get_outputs_from_datas(model, t_data, a_data, v_data, opt):
     bert_sentences = to_gpu(torch.LongTensor(bert_details["input_ids"]))
     bert_sentence_types = to_gpu(torch.LongTensor(bert_details["token_type_ids"]))
     bert_sentence_att_mask = to_gpu(torch.LongTensor(bert_details["attention_mask"]))
+    
     outputs = model(bert_sentences, bert_sentence_types, bert_sentence_att_mask, a_data, v_data, return_features=True)
 
     return outputs
@@ -298,7 +297,7 @@ def get_loss_from_loss_func(outputs, labels, loss_func, opt):
     task_loss = loss_func[0]
 
     # Get loss from predictions
-    if opt.loss in ['RMSE', 'MAE', 'MSE', 'SIMSE']:
+    if opt.loss in ['RMSE', 'MAE', 'MSE', 'SIMSE', 'CCC']:
         loss = task_loss(predictions.reshape(-1, ), labels.reshape(-1, ))
     else:
         raise NotImplementedError

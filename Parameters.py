@@ -16,10 +16,10 @@ def parse_args():
     parser.add_argument("--audio", default= 'MFCC', type=str, help = '(default : covarep)') # Only for CMUSDK dataset
     parser.add_argument("--video", default= 'AUPose', type=str, help = '(default : facet41)') # Only for CMUSDK dataset
     parser.add_argument("--d_t", default=768, type=int )
-    parser.add_argument("--d_a", default=39, type=int, help = '(default : 74 )')
+    parser.add_argument("--d_a", default=37, type=int, help = '(default : 74 )')
     parser.add_argument("--d_v", default=49, type=int, help = '(default : 47 )')
-    parser.add_argument("--batch_size", default=8, type=int, help='(default : 16)')
-    parser.add_argument("--num_workers", default=4, type=int)
+    parser.add_argument("--batch_size", default=2, type=int, help='(default : 16)')
+    parser.add_argument("--num_workers", default=0, type=int)
     parser.add_argument("--persistent_workers", action='store_true')
     parser.add_argument("--pin_memory", action='store_true')
     parser.add_argument("--drop_last", action='store_true')
