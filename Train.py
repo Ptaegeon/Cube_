@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error
 from torch.utils.tensorboard import SummaryWriter
 
 from Config import CUDA
-from DataLoaderLocal import mosi_r2c_7, pom_r2c_7, r2c_2, r2c_7
+from DataLoaderLocal import mosi_r2c_7, pom_r2c_7, r2c_2, r2c_7, r2c_phq
 from DataLoaderUniversal import get_data_loader
 from Model import Model
 from Parameters import parse_args
@@ -362,6 +362,22 @@ def get_score_from_result(predictions_corr, labels_corr, opt):
         elif opt.dataset in ['mmmo', 'mmmov2']:
             predictions_corr_2 = [int(p>=3.5) for p in predictions_corr]
             labels_corr_2 = [int(p>=3.5) for p in labels_corr]
+            acc_2 = accuracy_score(labels_corr_2, predictions_corr_2)
+            f1_2 = f1_score(labels_corr_2, predictions_corr_2, average='weighted')
+
+            return {
+                'mae': mae,
+                'corr': corr,
+                '2-cls_acc': acc_2,
+                '2-f1': f1_2,
+            }
+            
+        elif opt.dataset in ['E-DAIC-WOZ'] :
+            
+            predictions_corr_2 = [r2c_phq(p) for p in predictions_corr]
+            labels_corr_2 = [r2c_phq(p) for p in labels_corr]
+            
+            
             acc_2 = accuracy_score(labels_corr_2, predictions_corr_2)
             f1_2 = f1_score(labels_corr_2, predictions_corr_2, average='weighted')
 

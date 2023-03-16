@@ -47,3 +47,11 @@ def pom_r2c_7(a):
     if a >= 7:
         res = 3
     return res + 3
+
+def r2c_phq(a):
+    # [0,9] - not depressed, [10.50] - depressed, limit not to be under 0 & over 50 
+    if a < 10 :
+        res = 0
+    else :
+        res = 1
+    return res
